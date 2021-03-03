@@ -27,7 +27,7 @@ function makePlot(testId){
             type:'bar',
             orientation:'h'
         }
-        // create bar chart on page
+
         Plotly.newPlot('bar',[trace]);
         var otuValue=samples.map(row=>row.sample_values);
         var otuValue=otuValue[testNum];
@@ -61,33 +61,32 @@ function makePlot(testId){
                 }
             },
         };
-        // create bubble chart on page
+
         Plotly.newPlot('bubble',data1,bubbleLayout);    
         var meta=data.metadata;
-        var data2 = [
-            {
+        var data2 = [   {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: meta[testNum].wfreq,
                 title: { text: "Washing frequency" },
                 type: "indicator",
                 mode: "gauge+number",
                 gauge: { axis: { range: [null, 9] },
-                bar:{color: 'orange'},
+                bar:{color: 'red'},
                    steps: [
-                    { range: [0, 2], color: "rgba(14, 127, 0, .5)" },
-                    { range: [2, 3], color: "rgba(110, 154, 22, .5)" },
-                    { range: [3, 4], color: "rgba(170, 202, 42, .5)" },
-                    { range: [4, 5], color: "rgba(202, 209, 95, .5)" },
-                    { range: [5, 6], color: "rgba(210, 206, 145, .5)" },
-                    { range: [6, 8], color: "rgba(232, 226, 202, .5)" },
-                    { range: [8, 9], color: "rgba(255, 255, 255, 0)" }
-                  ]}
-            }
-        ];
-        
+                    { range: [0, 1], color: "rgba(232, 204, 255, .75)" },
+                    { range: [1, 2], color: "rgba(221, 178, 255,, .75)" },
+                    { range: [2, 3], color: "rgba(210, 153, 255, .75)" },
+                    { range: [3, 4], color: "rgba(199, 127, 255, .75)" },
+                    { range: [4, 5], color: "rgba(188, 102, 255, .75)" },
+                    { range: [5, 6], color: "rgba(177, 76, 255, .75)" },
+                    { range: [6, 8], color: "rgba(165, 51, 255, .75)" },
+                    { range: [8, 9], color: "rgba(154, 25, 255, .75)" }
+                        ]}
+                        }   ];
+
         var gaugeLayout = { width: 600, height: 500};
         Plotly.newPlot('gauge', data2, gaugeLayout);
-        // display metadata
+        // display meta info
         var metadata=d3.select('#sample-metadata');
         metadata.html('');
         Object.entries(meta[testNum]).forEach(([k,v])=>{
@@ -100,3 +99,9 @@ function optionChanged(newId) {
     // select id fro page
     makePlot(newId);
 }
+
+
+
+
+
+
