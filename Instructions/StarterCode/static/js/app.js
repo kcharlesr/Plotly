@@ -87,7 +87,7 @@ function makePlot(testId){
         
         var gaugeLayout = { width: 600, height: 500};
         Plotly.newPlot('gauge', data2, gaugeLayout);
-        // display meta info
+        // display metadata
         var metadata=d3.select('#sample-metadata');
         metadata.html('');
         Object.entries(meta[testNum]).forEach(([k,v])=>{
