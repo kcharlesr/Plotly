@@ -67,10 +67,10 @@ function makePlot(testId){
         var data2 = [   {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: meta[testNum].wfreq,
-                title: { text: "Washing frequency" },
+                title: { text: "Belly Button Washing FrequencyScrubs per Week" },
                 type: "indicator",
                 mode: "gauge+number",
-                gauge: { axis: { range: [null, 9] },
+                gauge: { axis: { range: [0, 9] },
                 bar:{color: 'red'},
                    steps: [
                     { range: [0, 1], color: "rgba(232, 204, 255, .75)" },
