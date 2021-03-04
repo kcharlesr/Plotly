@@ -67,7 +67,7 @@ function makePlot(testId){
         var data2 = [   {
                 domain: { x: [0, 1], y: [0, 1] },
                 value: meta[testNum].wfreq,
-                title: { text: "Belly Button Washing FrequencyScrubs per Week" },
+                title: { text: "Belly Button Washing Frequency <br> Scrubs per Week" },
                 type: "indicator",
                 mode: "gauge+number",
                 gauge: { axis: { range: [0, 9] },
